@@ -3,10 +3,15 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+
+    @search_items = Item.search(params[:search])
   end
 
   def show
+
     @item = Item.find(params[:id])
+    # @test = User.find(params[:id].email)
+
   end
 
   def new
@@ -15,6 +20,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.seller = current_user
 
     if @item.save
       redirect_to @item, notice: "Item successfully posted"
@@ -26,6 +32,13 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :item_photo)
+    params.require(:item).permit(:name, :description, :price, :seller_id, :item_picture_url)
+  end
+
+  def authorize_user
+    if !user_signed_in?
+      flash[:notice] = "Please sign up to post a new item!"
+      redirect_to new_user_registration_path
+    end
   end
 end

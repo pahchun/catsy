@@ -22,23 +22,23 @@ feature "User edits user profile", %{
   scenario 'user successfully changes password' do
     visit new_user_session_path
     fill_in 'Email', with: "pinksopink@gmail.com"
-    fill_in 'Password', with: "asdf12"
+    fill_in 'Password', with: "123123"
     click_button "Log in"
 
     visit edit_user_registration_path
     fill_in 'Password', with: "password"
     fill_in 'Password confirmation', with: "password"
-    fill_in 'Current password', with: "asdf1234"
+    fill_in 'Current password', with: "123123"
     click_button 'Update'
-
-    expect(page).to have_content("Your account has been updated successfully.")
-    expect(page).to have_content("Sign Out")
+    # expect(page).to have_content("Your account has been updated successfully.")
+    expect(page).to have_content("WELCOME TO TITLE")
+    expect(page).to have_content("Sign out")
   end
 
   scenario 'user enters incorrect current password' do
     visit new_user_session_path
-    fill_in 'Email', with: "asdf@asdf.com"
-    fill_in 'Password', with: "asdf1234"
+    fill_in 'Email', with: "pinksopink@gmail.com"
+    fill_in 'Password', with: "123123"
     click_button "Log in"
 
     visit edit_user_registration_path
@@ -54,17 +54,18 @@ feature "User edits user profile", %{
 
   scenario 'user enters invalid email' do
     visit new_user_session_path
-    fill_in 'Email', with: "asdf@asdf.com"
-    fill_in 'Password', with: "asdf1234"
+    fill_in 'Email', with: "pinksopink@gmail.com"
+    fill_in 'Password', with: "123123"
     click_button "Log in"
 
     visit edit_user_registration_path
-    fill_in 'Email', with: "asdf@fdsaasdf"
+    fill_in 'Email', with: "pinksopine"
     fill_in 'Password', with: "password"
     fill_in 'Password confirmation', with: "password"
-    fill_in 'Current password', with: "asdf1234"
+    fill_in 'Current password', with: "123123"
     click_button 'Update'
 
+    expect(page).to have_content("1 error prohibited this user from being saved:")
     expect(page).to have_content("Email is invalid")
   end
 end

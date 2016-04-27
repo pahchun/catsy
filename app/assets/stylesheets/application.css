@@ -12,4 +12,85 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+ .header {
+   text-align: center;
+   background: url("https://www.petfinder.com/wp-content/uploads/2012/11/99233806-bringing-home-new-cat-632x475.jpg") no-repeat center center;
+   background-size: cover;
+   padding: 4rem; }
+   .header .main-header {
+     color: #FFFFFF;
+   }
+
+ .header-subnav {
+   float: none;
+   position: relative;
+   top: 4rem;
+   text-align: center;
+   margin-bottom: 0; }
+   .header-subnav li {
+     float: none;
+     display: inline-block; }
+     .header-subnav li a {
+       padding: 0.9rem 1rem 0.75rem;
+       font-size: 0.875rem;
+       color: #fff;
+     }
+
+.item-wrapper {
+  padding: 20px;
+  border: 2px solid #efefef;
+  border-radius: 7px;
+  margin-top: 20px;
+  }
+.item-wrapper:hover .img-wrapper img {
+  -webkit-filter: grayscale(0);
+  }
+.item-wrapper:hover .img-wrapper .add-to-cart {
+  bottom: 0;
+  }
+
+.img-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 30%;
+  }
+.img-wrapper .add-to-cart {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #333;
+  padding: 16px 8px;
+  bottom: -50px;
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+  }
+.img-wrapper .add-to-cart:hover {
+  background-color: #008cba;
+  }
+.img-wrapper img {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-filter: grayscale(1);
+  width: 50%;
+  }
+
+h3 {
+  font-size: 22px;
+  }
+
+h5 {
+  font-weight: bold;
+  }
+
+p {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 0;
+  }

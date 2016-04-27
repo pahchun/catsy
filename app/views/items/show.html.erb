@@ -1,0 +1,20 @@
+<h1><%= @item.name %></h1>
+Description: <%= @item.description %> </br>
+Price: $ <%= @item.price %> </br>
+<p>Seller's Email: <%= @item.seller.email %></p>
+
+<% if @item.item_picture_url.url.nil?%>
+  <%= image_tag("WDF_2463360", width:'300', height: '300') %><br />
+  Seller did not add an item picture for <%= @item.name %> <br /><br />
+<% else %>
+  <img id="item_picture" src="<%= @item.item_picture_url %>" width= "300" length= "300" alt="<%= @item.name %>" /> <br /><br />
+<% end %>
+
+
+<div id="map-canvas-0" style="width:500px; height: 300px;"></div>
+<%= hidden_field( :address, :field, :value => @item.seller.address ) %>
+
+<%= javascript_include_tag "maps.js" %>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXrKWrMR87cYrUwB-Gpm77ncvr-CkEdcU&callback=initMap">
+</script>

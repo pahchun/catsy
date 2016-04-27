@@ -1,0 +1,39 @@
+<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+<header class="header">
+  <h1 class="main-header">CATSY!</h1>
+  <ul class="header-subnav">
+    <li><%= link_to "HOME", root_path %></li>
+    <li><%= link_to "Add New Item", new_item_path if current_user %></li>
+    <li><%= link_to 'Sign up', new_user_registration_path unless current_user %></li>
+    <li><%= link_to "Sign in", new_user_session_path unless current_user %></li>
+    <li><%= link_to "User Profile", user_profile_path(current_user) if current_user%></li>
+    <li><%= link_to "Edit profile", edit_user_registration_path, method: :get if current_user %></li>
+    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %></li>
+  </ul>
+
+
+
+    	<head>
+    		<!-- Look at: http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp -->
+    		<link rel="stylesheet" href="search.css">
+    		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    		<script src="searchBox.js"></script>
+    	</head>
+
+    	<body>
+
+    		<div onclick="onSearchClick()">
+    			<span id="searchText">Search <span class="glyphicon glyphicon-search"></span></span>
+    			<div class="btn-group">
+    				<input id="searchField" type="search" style="display:none;" class="form-control">
+    				<!--<span id="searchClear" class="glyphicon glyphicon-remove form-control-feedback" ></span>-->
+    			</div>
+    		</div>
+
+    		TEST ICON <span class="glyphicon glyphicon-piggy-bank"></span>
+
+    	</body>
+
+</header>

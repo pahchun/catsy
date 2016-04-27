@@ -7,8 +7,36 @@
 
 <body>
   <br>
-<h1><%= link_to 'TITLE', root_path, :class => 'brand' %></h1></br>
+  <div class="row text-center">
 
+    <h1><%= link_to 'TITLE', root_path, :class => 'brand' %></h1></br>
 
-<h5> WELCOME TO TITLE </h5>
+    <h5> WELCOME TO TITLE </h5>
+  </div>
+
+  <div class="row small-up-1 medium-up-2 large-up-3">
+    <% @items.each do |item| %>
+      <div class="column">
+
+        <div class="item-wrapper">
+          <div class="row">
+            <div class="large-12 large-centered column text-center">
+            <div class="img-wrapper">
+              <a class="button expand add-to-cart">Add to Cart</a>
+
+              <% if item.item_picture_url.url.nil? %>
+                <%= link_to image_tag('WDF_2463360.jpg'), item_path(item) %>
+              <% else %>
+                <a href="/items/<%= item.id %>"><img src="<%= item.item_picture_url %>" width="200" height="200"></a>
+              <% end %>
+            </div>
+            <h4><%= link_to item.name, item_path(item) %></h4>
+            <h5>$ <%= item.price %></h5>
+            <p><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+  </div>
 </body>
