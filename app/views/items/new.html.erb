@@ -13,5 +13,8 @@
   <%= f.label :item_picture_url %>
   <%= f.file_field :item_picture_url, class: "form-control"%>
 
+  <%= f.label :category %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, { :prompt => 'Category', :selected => @item.category_id}, {class: 'form-control' }) %>
+
   <%= f.submit "Add Item"%>
 <% end %>

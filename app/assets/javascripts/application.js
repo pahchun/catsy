@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
 var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
   var options = {
@@ -33,4 +35,10 @@ var coords = new google.maps.LatLng(position.coords.latitude, position.coords.lo
       title:"You are here!"
   });
 
-$(function(){ $(document).foundation(); });
+
+$('.jscroll').jscroll({
+  loadingHtml: '<img src="loading.gif" alt="Loading" /> Loading...',
+  padding: 20,
+  nextSelector: 'a.jscroll-next:last',
+  contentSelector: 'li'
+});

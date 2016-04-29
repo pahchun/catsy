@@ -5,11 +5,14 @@ Rails.application.routes.draw do
     resource :profile, only: [:show]
   end
 
+  resources :categories, only: [:show]
+
   root "items#index"
   resources :items do
     collection do
       get 'search'
     end
   end
+
   get 'pages/about'
 end

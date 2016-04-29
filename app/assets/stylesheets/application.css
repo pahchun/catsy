@@ -94,3 +94,20 @@ p {
   font-size: 13px;
   margin-bottom: 0;
   }
+
+
+.img_rotated {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      float:left;
+      /*transform-origin: 35px 35px;
+      -webkit-transform-origin: 35px 35px;
+      -moz-transform-origin: 35px 35px;
+      -ms-transform-origin: 35px 35px;*/
+  }
+
+  .catlist li {
+    background-color: #ffb6c1;
+  }

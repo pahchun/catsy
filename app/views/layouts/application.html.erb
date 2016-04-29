@@ -13,6 +13,13 @@
 
   <body>
     <%= render 'layouts/navbar' %>
+    <div class="container-fluid">
+      <div class="flash_message">
+        <% flash.each do |key, value| %>
+        <%= value %>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
 
   </body>

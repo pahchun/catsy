@@ -1,16 +1,13 @@
 class ItemsController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:index, :show, :search]
 
   def index
-    @items = Item.all
-
+    # @items = Item.all
+    @items = Item.all.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
-
     @item = Item.find(params[:id])
-    # @test = User.find(params[:id].email)
-
   end
 
   def new
@@ -30,13 +27,22 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:search])
-    render :index
+    if params[:search] == ""
+      flash[:error] = "Please enter your search"
+      redirect_to '/items'
+    elsif @items.empty?
+      flash[:error] = "No match found"
+      redirect_to '/items'
+    else
+      render :index
+    end
   end
+
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :seller_id, :item_picture_url)
+    params.require(:item).permit(:name, :description, :price, :seller_id, :item_picture_url, :category_id)
   end
 
   def authorize_user

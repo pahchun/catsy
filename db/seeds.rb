@@ -22,22 +22,43 @@ unless user_2.present?
   )
 end
 
+Category.create!([
+  {name: "All"},
+  {name: "Toys"},
+  {name: "Food"},
+  {name: "Litter"},
+  {name: "Furniture"},
+  {name: "Others"}
+  ])
+
 item_1 = Item.create(
   name: "Pink Collar",
   price: "3.99",
   description: "Cute pink collar for cats",
-  seller: user_2
+  seller: user_2,
+  category_id: 6
 )
 
 item_2 = Item.create(
   name: "Organic catnip",
   price: "10.00",
   description: "Home grown organic catnip",
-  seller: user_2
+  seller: user_2,
+  category_id: 6
 )
 
 item_3 = Item.create(
   name: "Organic cat food",
   price: "39.99",
-  seller: user_1
+  seller: user_1,
+  category_id: 3
 )
+
+25.times do
+  Item.create(
+    name: "Bleh",
+    price: "20.00",
+    seller: user_1,
+    category_id: 4
+  )
+end

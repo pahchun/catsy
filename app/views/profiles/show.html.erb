@@ -1,13 +1,15 @@
 <h2> <%= current_user.email %>'s user profile </h2>
 
 <h4>Items sold</h4>
-<% @items.each do |item| %>
-  <ul>
-    <% if item.seller.email == current_user.email %>
-    <li><%= link_to item.name, item_path(item) %> </li>
-    <% end %>
-  </ul>
-<% end %>
-
+<ul>
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, item_path(item) %></li>
+  <% end %>
+</ul>
 
 <h4>Items bought</h4>
+<ul>
+  <% @user.items.each do |item| %>
+    <li><%= link_to item.name, item_path(item) %></li>
+  <% end %>
+</ul>
