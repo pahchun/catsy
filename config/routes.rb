@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   end
 
   root "items#index"
-  resources :items
+  resources :items do
+    collection do
+      get 'search'
+    end
+  end
+  get 'pages/about'
 end

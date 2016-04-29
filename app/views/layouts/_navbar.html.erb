@@ -4,6 +4,7 @@
   <h1 class="main-header">CATSY!</h1>
   <ul class="header-subnav">
     <li><%= link_to "HOME", root_path %></li>
+    <li><%= link_to "About", pages_about_path %></li>
     <li><%= link_to "Add New Item", new_item_path if current_user %></li>
     <li><%= link_to 'Sign up', new_user_registration_path unless current_user %></li>
     <li><%= link_to "Sign in", new_user_session_path unless current_user %></li>
@@ -19,21 +20,20 @@
     		<link rel="stylesheet" href="search.css">
     		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    		<script src="searchBox.js"></script>
     	</head>
 
     	<body>
 
-    		<div onclick="onSearchClick()">
+    		<div>
     			<span id="searchText">Search <span class="glyphicon glyphicon-search"></span></span>
     			<div class="btn-group">
-    				<input id="searchField" type="search" style="display:none;" class="form-control">
+            <%= form_tag search_items_path(:search), method: 'GET' do %>
+            <%= text_field_tag :search, "", id: "searchField", style: "display: none;" %>
+    				<!-- <input id="searchField" type="search" style="display:none;" class="form-control"> -->
+            <% end %>
     				<!--<span id="searchClear" class="glyphicon glyphicon-remove form-control-feedback" ></span>-->
     			</div>
     		</div>
 
-    		TEST ICON <span class="glyphicon glyphicon-piggy-bank"></span>
-
     	</body>
-
 </header>

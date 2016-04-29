@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
-    @search_items = Item.search(params[:search])
   end
 
   def show
@@ -27,6 +26,11 @@ class ItemsController < ApplicationController
     else
       render action: 'new'
     end
+  end
+
+  def search
+    @items = Item.search(params[:search])
+    render :index
   end
 
   private

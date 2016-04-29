@@ -6,6 +6,6 @@ class Item < ActiveRecord::Base
   mount_uploader :item_picture_url, ItemPictureUploader
 
   def self.search(query)
-    where { title =~ "#{query}%" }
+    self.where('name ILIKE ?', "%#{query}%")
   end
 end
