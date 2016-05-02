@@ -12,6 +12,3 @@
 !/log/.keep
 /tmp
 .env
-
-# Ignore uploaded files in test/development
-/app/assets/images
