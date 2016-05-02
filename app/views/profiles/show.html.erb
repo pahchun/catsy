@@ -1,0 +1,16 @@
+<h2> <%= current_user.email %>'s user profile </h2>
+
+<h4>Items sold</h4>
+<ul class="bought-and-sold">
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, item_path(item) %></li>
+  <% end %>
+</ul>
+
+
+<h4>Items bought</h4>
+<ul class="bought-and-sold">
+  <% @user.items.each do |item| %>
+    <li><%= link_to item.name, item_path(item) %></li>
+  <% end %>
+</ul>

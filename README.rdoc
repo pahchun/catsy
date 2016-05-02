@@ -1,0 +1,30 @@
+Catsy
+=
+
+This was a breakable toy project for Launch Academy's Spring 2016 cohort.
+
+Catsy is a marketplace site created in two weeks - users can browse products related to cats, post an item and put items in cart.
+
+Deploying Eyekea
+=
+In order to get Eyekea running:
+* Clone the repository
+* `bundle install`
+* `rake db:setup`
+* `rails s`
+
+Key Features
+=
+* Users can add products that they want to sell to the site.
+* The Devise gem was implemented to handle user registration and sign in.
+* Google Maps Geolocation was used to post location of seller.
+* Item pictures via the CarrierWave gem and an S3 bucket
+
+Feature Wishlist
+=
+Here are some of the features that would improve this site, if there were more time:
+* Better unit and feature test coverage
+* Integrate sending emails automatically based on user behavior
+* Product reviews from buyers
+* Payment transaction
+* Make the site mobile friendly & put more time in on the styling

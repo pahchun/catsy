@@ -1,0 +1,321 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Courgette);
+ @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:700);
+
+ *,
+ ::before,
+ ::after {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+ }
+
+ body {
+   background-color: #f4c2c2;
+   font-family: 'Inconsolata', sans-serif;
+ }
+
+ h2, h3 {
+   margin-top: 20px;
+   text-align: center;
+ }
+
+ h3 {
+   font-size: 22px;
+ }
+
+ h5 {
+   font-weight: bold;
+ }
+
+ p {
+   font-size: 17px;
+   margin-bottom: 0;
+ }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+ .nav-container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 0 auto;
+ }
+
+ header {
+   background: url("https://www.petfinder.com/wp-content/uploads/2012/11/99233806-bringing-home-new-cat-632x475.jpg") no-repeat center center;
+   background-size: cover;
+   height: 250px;
+   margin-bottom: 30px;
+ }
+
+ nav {
+   font-weight: 800;
+   position: fixed;
+   width: 100%;
+   z-index: 10000;
+ }
+
+ .overlay {
+   background: rgba(20, 20, 20, .4);
+   height: 100%;
+   width: 100%;
+ }
+
+ h1.main-header {
+   color: #FFFFFF;
+   font-family: 'Inconsolata', cursive;
+  }
+
+  .thing {
+    border: 1px solid red;
+  }
+
+  .header .main-header a {
+    color: #f4c2c2;
+  }
+
+ .header-subnav {
+   display: inline-block;
+ }
+
+.header-subnav li {
+   float: none;
+   display: inline-block;
+}
+ .header-subnav li a {
+   padding: 0.9rem 1rem 0.75rem;
+   font-size: 1rem;
+   color: #fff;
+ }
+
+.item-wrapper {
+  padding: 20px;
+  border-radius: 7px;
+  margin-top: 20px;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: 700;
+  }
+}
+
+.item-wrapper:hover .img-wrapper img {
+  -webkit-filter: grayscale(0);
+}
+
+.item-wrapper:hover .img-wrapper .add-to-cart {
+  bottom: 0;
+}
+
+.img-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 30%;
+}
+
+.img-wrapper .add-to-cart {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: #333;
+    padding: 16px 8px;
+    bottom: -50px;
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+}
+
+.img-wrapper .add-to-cart:hover {
+  background-color: #008cba;
+}
+
+.img-wrapper img {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-filter: grayscale(1);
+  height: auto;
+  width: 100%;
+}
+
+.img_rotated {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      float:left;
+      /*transform-origin: 35px 35px;
+      -webkit-transform-origin: 35px 35px;
+      -moz-transform-origin: 35px 35px;
+      -ms-transform-origin: 35px 35px;*/
+  }
+
+  .catlist li {
+    background-color: #ffb6c1;
+  }
+
+  .catlist li a {
+    color: black;
+  }
+
+  #searchText {
+    background-image: image-url("search-icon");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin-left: 10px;
+    padding: 12px;
+
+    &:hover {
+      cursor:pointer;
+    }
+  }
+
+  .tagline-container {
+    padding-top: 100px;
+    text-align: center;
+
+    span {
+      color: #ffb6c1;
+      font-family: 'Inconsolata', cursive;
+      font-size: 32px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    margin: 20px auto 50px;
+  }
+
+  form {
+    width: 80vw;
+    max-width: 600px;
+    margin: 0 auto;
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    select {
+      border: 2px solid #000;
+    }
+
+    input[type="submit"] {
+      background: #2199e8;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      margin: 15px 0 100px;
+      padding: 10px 20px;
+    }
+
+    label {
+      font-size: 1.14rem;
+    }
+  }
+
+  .search {
+    form {
+      display: inline;
+    }
+  }
+
+  .product-info {
+    width: 100%;
+    margin-bottom: 15px;
+
+    p {
+      margin: 15px 0;
+    }
+  }
+
+  .pic {
+    width: 100%;
+
+    p {
+      margin: 15px 0 25px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      padding: 10px 0;
+    }
+
+    nav .main-header {
+      font-size: 28px;
+    }
+
+    nav .header-subnav li a {
+      font-size: 14px;
+    }
+
+    header .header-subnav li.about,
+    header .header-subnav li.add-item,
+    header .header-subnav li.categories,
+     {
+      display: none;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 800px) {
+    nav {
+      padding: 10px 0;
+    }
+
+    nav .main-header {
+      font-size: 28px;
+    }
+
+    nav .header-subnav li a {
+      font-size: 14px;
+    }
+
+    header .header-subnav li.about,
+    header .header-subnav li.add-item,
+     {
+      display: none;
+    }
+  }
+
+#map-canvas-0 {
+  margin: 0 auto 20px;
+}
+
+.img_flat{
+  margin-top: 65px;
+  margin-left: 600px;
+}
