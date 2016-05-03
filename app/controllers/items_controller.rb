@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :authorize_user, except: [:index, :show, :search]
 
   def index
-    # @items = Item.all
     @items = Item.all.paginate(:page => params[:page], :per_page => 9).order('created_at DESC')
   end
 
