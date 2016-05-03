@@ -5,7 +5,7 @@
   </div>
   <div class="pic">
     <% if @item.item_picture_url.url.nil?%>
-      <%= image_tag("WDF_2463360", width:'300', height: '300') %><br />
+      <%= image_tag("WDF_2463360.jpg", width:'300', height: '300') %><br />
       Seller did not add an item picture for <%= @item.name %> <br /><br />
     <% else %>
       <img id="item_picture" src="<%= @item.item_picture_url %>" width= "300" length= "300" alt="<%= @item.name %>" /> <br /><br />
