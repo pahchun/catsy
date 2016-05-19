@@ -26,6 +26,17 @@ $(document).on("scroll", function() {
   }
 });
 
+$(function(){
+  $('.catlist menu').hover(
+    function(){
+      $(this).addClass('highlight');
+    },
+    function(){
+      $(this).removeClass('highlight');
+    }
+  );
+});
+
 var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
   var options = {
