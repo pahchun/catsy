@@ -23,7 +23,6 @@ unless user_2.present?
 end
 
 Category.create!([
-  {name: "All"},
   {name: "Toys"},
   {name: "Food"},
   {name: "Litter"},

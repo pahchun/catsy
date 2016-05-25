@@ -26,7 +26,7 @@ feature "sign up", %{
     fill_in 'Password confirmation', with: "hellopassword"
     click_button 'Sign up'
 
-    expect(page).to have_content("WELCOME TO TITLE")
+    expect(page).to have_content("CATSY")
     expect(page).to have_content("Sign out")
   end
 

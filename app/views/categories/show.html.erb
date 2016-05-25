@@ -9,6 +9,8 @@
               <div class="img-wrapper">
                 <% if current_user %>
                   <%= link_to "Add To Cart", user_profile_path(current_user, item_id: item.id), class: "button expand add-to-cart" %>
+                <% else %>
+                  <a class="button expand add-to-cart" onclick="meessageAlert()">Add to Cart</a>
                 <% end %>
 
                 <% if item.item_picture_url.url.nil? %>

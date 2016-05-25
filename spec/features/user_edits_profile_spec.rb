@@ -31,7 +31,7 @@ feature "User edits user profile", %{
     fill_in 'Current password', with: "123123"
     click_button 'Update'
     # expect(page).to have_content("Your account has been updated successfully.")
-    expect(page).to have_content("WELCOME TO TITLE")
+    expect(page).to have_content("CATSY")
     expect(page).to have_content("Sign out")
   end
 
