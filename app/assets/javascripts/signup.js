@@ -10,6 +10,6 @@
 //  })
 //});
 
-function meessageAlert(){
+function messageAlert(){
   confirm("Please sign in to add to cart");
 }
