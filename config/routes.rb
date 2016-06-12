@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
 
   get 'pages/about'
+
+  resources :charges
 end

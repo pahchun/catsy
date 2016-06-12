@@ -36,7 +36,7 @@ item_1 = Item.create(
   description: "Cute pink collar for cats",
   item_picture_url: open("http://www.chrome-bones.com/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1100pk-1-new.png"),
   seller: user_2,
-  category_id: 6
+  category_id: 5
 )
 
 item_2 = Item.create(
@@ -45,14 +45,14 @@ item_2 = Item.create(
   description: "Made with real bird feathers. Cats go crazy to play with this toy!!",
   item_picture_url: open("http://cdn.instructables.com/FCC/G4ZY/GW8980JR/FCCG4ZYGW8980JR.MEDIUM.jpg"),
   seller: user_2,
-  category_id: 2
+  category_id: 1
 )
 
 item_3 = Item.create(
   name: "Organic cat food",
   price: "39.99",
   seller: user_1,
-  category_id: 3
+  category_id: 2
 )
 
 10.times do
@@ -62,7 +62,6 @@ item_3 = Item.create(
     description: "All cats love this catnip. Tested with 25 cats from neighborhood. Home grown catnip plant, dried, and made.",
     item_picture_url: open("http://chilloutkitty.com/wp-content/uploads/2015/03/catnip7.jpg"),
     seller: user_1,
-    category_id: 3
+    category_id: 5
   )
-
 end
