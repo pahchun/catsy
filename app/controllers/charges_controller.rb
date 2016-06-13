@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
     current_user.items.each do |item|
       @total += item.price
     end
+    binding.pry
   end
 
   def create
@@ -14,14 +15,14 @@ class ChargesController < ApplicationController
     end
 
     customer = Stripe::Customer.create(
-      :email => 'hello@gmail.com',
+      :email => current_user.email,
       :card => params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
       :customer => customer.id,
-      :amount => @amount,
-      :description => 'Carrie Customer',
+      :amount => (@amount.to_i)*100,
+      :description => current_user.items.name,
       :currency => 'usd'
     )
 

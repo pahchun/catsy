@@ -15,6 +15,4 @@
   <% end %>
 </ul>
 
-<div class="checkout">
-  <%= link_to "<button>CHECKOUT</button>".html_safe, new_charge_path(current_user), :id => "button_id", :class => "button_class" %>
-</div>
+<%= link_to "CHECKOUT", new_charge_path, class: 'button' %>
