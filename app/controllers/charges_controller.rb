@@ -4,7 +4,6 @@ class ChargesController < ApplicationController
     current_user.items.each do |item|
       @total += item.price
     end
-    binding.pry
   end
 
   def create
