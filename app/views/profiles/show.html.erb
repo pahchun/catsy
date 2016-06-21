@@ -1,18 +1,23 @@
-<h2> <%= current_user.email %>'s user profile </h2>
+<h2 id="cart"> <%= current_user.email %>'s user profile </h2>
 
-<h4>Items sold</h4>
-<ul class="bought-and-sold">
-  <% @items.each do |item| %>
-    <li><%= link_to item.name, item_path(item) %></li>
-  <% end %>
-</ul>
+<div class="cart-container">
+  <h4>Items sold</h4>
+  <ul class="bought-and-sold">
+    <% @items.each do |item| %>
+      <li><%= link_to item.name, item_path(item) %></li>
+    <% end %>
+  </ul>
 
 
-<h4>Items bought</h4>
-<ul class="bought-and-sold">
-  <% @user.items.each do |item| %>
-    <li><%= link_to item.name, item_path(item) %></li>
-  <% end %>
-</ul>
+  <h4>Items bought</h4>
+  <ul class="bought-and-sold">
+    <% @user.items.each do |item| %>
+      <li><%= link_to item.name, item_path(item) %>
+        <%= button_to "Delete", user_profile_path(:id => item.id), method: :delete, id:"delete-btn" %></li>
+    <% end %>
+  </ul>
 
-<%= link_to "CHECKOUT", new_charge_path, class: 'button' %>
+  <div id="checkout">
+    <%= link_to "CHECKOUT", new_charge_path, class: 'button' %>
+  </div>
+</div>

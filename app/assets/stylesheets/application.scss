@@ -319,3 +319,33 @@
   margin-top: 65px;
   margin-left: 600px;
 }
+
+#delete-btn {
+  padding: 5px;
+  border: solid 2px black;
+  margin-left: auto;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  display: inline;
+}
+
+#checkout .button {
+  margin-left: 10px;
+  background-color: black;
+}
+
+#cart {
+  padding-top: -20px;
+  margin-top: -50px;
+}
+.cart-container {
+  /*display: table;
+  margin-right: auto;
+  margin-left: auto;*/
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bought-and-sold {
+  text-align: center;
+}

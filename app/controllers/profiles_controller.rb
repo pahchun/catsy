@@ -4,6 +4,13 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:user_id])
     @items = @user.items_for_sale
     @purchased_items = @user.items
+
+  end
+
+  def destroy
+    @item = current_user.items.find(params[:id])
+    @item.destroy
+    redirect_to user_profile_path
   end
 
   private
